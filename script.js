@@ -57,28 +57,28 @@ function premio(premios){
   setTimeout(() => {
   switch (true) {
     case valor > 0 && valor <= 45:
-     premio("1");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break;
      case valor > 45 && valor <= 90:
-     premio("2");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break;
      case valor > 90 && valor <= 135:
-     premio("3"); 
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS"); 
      break; 
      case valor > 135 && valor <= 180:
-     premio("4");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break;
      case valor > 180 && valor <= 225:
-     premio("5");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break; 
      case valor > 225 && valor <= 270:
-     premio("6");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break;
      case valor > 270 && valor <= 315:
-     premio("7");
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS");
      break;
      case valor > 315 && valor <= 360:
-     premio("8"); 
+     premio("JOJAN HA GANADO UN BESO DE TUS LABIOS"); 
      break;
   }
 
