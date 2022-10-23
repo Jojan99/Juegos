@@ -26,6 +26,8 @@ body {
 img {
     z-index: 100;
     transition: all 5s;
+     max-width: 100%;
+    width: 500px;
 }
 
 #premio {
