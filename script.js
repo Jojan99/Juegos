@@ -37,7 +37,7 @@ function premio(premios){
   }else{
     Swal.fire({
       icon: 'success',
-      title: 'Eres ganadora de ' + premios,
+      title: ' ' + premios,
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Aceptar',
       allowOutsideClick: false
