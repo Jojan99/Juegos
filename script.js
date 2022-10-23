@@ -8,7 +8,7 @@ function girar(){
     calcular(rand);
     giros++;
     var sonido = document.querySelector('#audio');
-    sonido.setAttribute('src', 'sonido/ruleta.mp3');
+    sonido.setAttribute('src', 'ruleta.mp3');
   }else{
     Swal.fire({
       icon: 'success',
