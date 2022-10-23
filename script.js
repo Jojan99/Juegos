@@ -12,7 +12,7 @@ function girar(){
   }else{
     Swal.fire({
       icon: 'success',
-      title: 'VUELVA PRONTO EL JUEGO TERMINO!!',
+      title: 'VUELVA PRONTO EL JUEGO TERMINO <3',
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Aceptar',
       allowOutsideClick: false
