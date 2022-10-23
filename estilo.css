@@ -5,7 +5,7 @@
 
 body {
     background-color: rgb(98, 98, 131);
-    background-image: url('../image/fondo.png');
+    background-image: url('fondo.png');
 }
 
 .vara {
