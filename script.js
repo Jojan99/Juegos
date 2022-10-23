@@ -4,7 +4,7 @@ ruleta.addEventListener('click', girar);
 giros = 0;
 function girar(){
   if (giros >= 1){
- alert ("Ya haz completado todos los tiros")
+ alert ("Ya ha completado todos los tiros")
   }else{
   if (giros < 1) {
     let rand = Math.random() * 7200;
