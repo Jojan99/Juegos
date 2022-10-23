@@ -3,10 +3,10 @@ const ruleta = document.querySelector('#ruleta');
 ruleta.addEventListener('click', girar);
 giros = 0;
 function girar(){
-  if (giros >= 100){
+  if (giros >= 1){
  alert ("Ya haz completado todos los tiros")
   }else{
-  if (giros < 100) {
+  if (giros < 1) {
     let rand = Math.random() * 7200;
     calcular(rand);
     giros++;
@@ -32,10 +32,10 @@ function girar(){
 
 function premio(premios){
 
-  if(premios == "PIERDES TODO"){
+  if(premios == "PERDISTE BONO #8"){
     Swal.fire({
       icon: 'success',
-      title: 'Acabas de perder',
+      title: 'Pierdes bono :(',
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Aceptar',
       allowOutsideClick: false
@@ -43,7 +43,7 @@ function premio(premios){
   }else{
     Swal.fire({
       icon: 'success',
-      title: 'Eres ganadorww  a de ' + premios,
+      title: 'Eres ganadora de ' + premios,
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Aceptar',
       allowOutsideClick: false
@@ -85,10 +85,10 @@ function premio(premios){
      case valor > 270 && valor <= 315:
      premio("POPSY #7");
      break;
-     case valor > 315 && valor <= 336:
+     case valor > 315 && valor <= 337:
       premio("PERDISTE BONO #8"); 
      break;
-     case valor > 336 && valor <= 360:
+     case valor > 337 && valor <= 360:
      premio("GANASTE BONO #8"); 
      break;
   
