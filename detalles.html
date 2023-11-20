@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles del Vehículo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container-fluid {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #vehiculo-info {
+            background-color: #f7f7f7;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        #imagen {
+            max-width: 100%;
+            height: auto;
+        }
+
+        #comprar-btn {
+            background-color: #00ff6e;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 15px 25px;
+            cursor: pointer;
+            
+        }
+        #comprar-btn1 {
+            background-color: #ff5500;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 15px 25px;
+            cursor: pointer;
+            
+        }
+
+        /* Estilos personalizados para la modal */
+        .modal-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .modal-body {
+            background-color: #f7f7f7;
+        }
+
+        #confirmacionModalLabel {
+            color: #007bff;
+        }
+        .comprar-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="vehiculo-info">
+            <h1>Detalles del Vehículo</h1>
+            <h3 id="nombre">Nombre del Vehículo</h3>
+            <p id="descripcion">Descripción del Vehículo</p>
+            <p id="precio">Precio del Vehículo</p>
+            <img id="imagen" alt="Imagen del vehículo">
+            <button id="comprar-btn" onclick="confirmarCompra()">Comprar</button>
+            <button id="comprar-btn1" onclick="regresarindex()">Regresar</button>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmacionModalLabel">Confirmar Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="modal-body">
+                    <!-- Contenido de la modal se actualizará dinámicamente -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="mostrarModal()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="contenido.js"></script>
+    <script src="detalles.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        function confirmarCompra() {
+            var modalBody = document.getElementById("modal-body");
+            modalBody.innerHTML = "<p>¿Estás seguro de que deseas comprar el vehículo?</p>";
+            $("#confirmacionModal").modal("show");
+
+        }
+
+        function mostrarModal() {
+            var modalBody = document.getElementById("modal-body");
+            modalBody.innerHTML = "<p>Nombre del Vehículo: " + document.getElementById("nombre").innerText + "</p>" +
+                "<p>Precio del Vehículo: " + document.getElementById("precio").innerText + "</p>" +
+                "<form>" +
+                "<div class='form-group'>" +
+                "<label for='nombreCliente'>Nombre:</label>" +
+                "<input type='text' class='form-control' id='nombreCliente' name='nombreCliente' required>" +
+                "</div>" +
+                "<div class='form-group'>" +
+                "<label for='emailCliente'>Email:</label>" +
+                "<input type='email' class='form-control' id='emailCliente' name='emailCliente' required>" +
+                "</div>" +
+                "<div class='form-group'>" +
+                "<label for='pago'>Método de Pago:</label>" +
+                "<select class='form-control' id='pago' name='pago'>" +
+                "<option value='efectivo'>Efectivo</option>" +
+                "<option value='transferencia'>Transferencia</option>" +
+                "</select>" +
+                "</div>" +
+                "<button type='button' class='btn btn-primary' onclick='confirmarPago()'>Confirmar Pago</button>" +
+                "</form>";
+
+            $("#confirmacionModal").modal("show");
+        }
+
+        function confirmarPago() {
+            var mensajeExito = "<div class='alert alert-success' role='alert'>" +
+                "<h4 class='alert-heading'>¡Reserva de compra exitosa!</h4>" +
+                "<p>Su información será revisada. Dirección del concesionario: Calle 95 #76-32</p>" +
+                "</div>";
+
+            $("#modal-body").html(mensajeExito);
+            $("#confirmacionModal .modal-footer button").css("display", "none");
+            // Ocultar los botones después de 3 segundos (ajustar según sea necesario)
+
+            // También puedes usar el método hide(): $("#confirmacionModal .modal-footer button").hide();
+
+            // Redirigir a la página de inicio después de otros 2 segundos (ajustar según sea necesario)
+            setTimeout(function () {
+                window.location.href = "index.html";
+            }, 3000);
+        }
+
+        function regresarindex(){
+            window.location.href = "index.html";
+        }
+    </script>
+</body>
+
+</html>

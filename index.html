@@ -1,48 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juego de la Ruleta</title>
-  <link rel="stylesheet" href="css/estilo.css">
-  <link rel="icon" href="data:,">
+    <meta charset="UTF-8">
+    <title>AUTOSELTC</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/logo.ico" />
+
+
+    <!-- CSS-->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
+
+    <!-- Animacion CSS -->
+    <script src="contenido.js"></script>
+    <!-- Luego, carga detalles.js -->
 </head>
 
 <body>
-  <div id="premio">
 
-    <table style=" margin: 0 auto;">
-      <tr>
-        <td>
-          <p class="elije">Tu premio es:</p>
-        </td>
+    <nav class="navbar navbar-expand-lg py-3 navbar-light" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand text-black font-weight-bold" href="#">
+                <img src="img/logo.jpg" alt="Logo" width="115" height="85">
+                &nbsp&nbsp AUTOSELTC
+            </a>
+        </div>
+    </nav>
 
 
-      </tr>
-      <tr>
-        <td>
-        </td>
-      </tr>
-    </table>
+    <div class="contenedor-padre">
+        <div class="izquierda-20">
+         
+        </div>
 
-  </div>
+        <div class="mitad">
+            <div id="items-container">
+                <a href="detalles.html?id=1">
+                    <div class="row" id="items">
+            </div>
+            <div id="button-container" class="button-container">
+                <a id="prevPage" href="#" class="page-link"> << Página anterior</a>
+                <ul class="pagination justify-content-center" id="pagination"></ul>
+                <a id="nextPage" href="#" class="page-link">Página siguiente >></a>
+            </div>
+        </div>
+        </div>
+    </a>
 
-  <div class="vara"></div>
-  <div>
-    <img src="image/imagen.png" id="ruleta">
-  </div>
-  <div>
-    <div id="sonido" style="display: none;">
-      <iframe src="sonido/ruleta.mp3" id="audio"></iframe>
-
+        <div class="derecha-20">
+            <!-- Contenido de la parte derecha -->
+        </div>
     </div>
-  </div>
 
+    <div class="pagination-container">
+     
+    </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <script src="js/script.js"></script>
 </body>
 
-</html>
+<!--script Animacion-->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+
+    </html>
